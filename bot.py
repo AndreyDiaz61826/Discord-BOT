@@ -1,3 +1,11 @@
+import os
+import requests
+
+WEBHOOK_URL = os.environ.get("WEBHOOK_URL")
+
+def send(message):
+    requests.post(WEBHOOK_URL, json={"content": message})
+
 for p in products:
     if p["status"] == "new":
         msg = f"""
